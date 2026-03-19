@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raíces Vivas App</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #e9f5ec;
+    display: flex;
+    justify-content: center;
+}
+
+/* Simulación de celular */
+.app {
+    width: 360px;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Header */
+.header {
+    background: #3a5a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contenido */
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+/* Tarjetas */
+.card {
+    background: #f4f7f3;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+/* Navbar inferior */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background: #344e41;
+    padding: 10px;
+    color: white;
+}
+
+.navbar div {
+    text-align: center;
+    font-size: 12px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+```
+<div class="header">
+    <h2>🌿 Raíces Vivas</h2>
+    <p>Sabiduría ancestral</p>
+</div>
+
+<div class="content">
+
+    <div class="card">
+        <h3>🌿 Manzanilla</h3>
+        <p>Usada tradicionalmente para momentos de calma y bienestar.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌿 Ruda</h3>
+        <p>Parte de rituales y prácticas culturales en distintas regiones.</p>
+    </div>
+
+    <div class="card">
+        <h3>🌿 Sábila</h3>
+        <p>Planta presente en muchos hogares por sus usos tradicionales.</p>
+    </div>
+
+    <div class="card">
+        <h3>Historia</h3>
+        <p>"Mi abuela siempre tenía una planta de ruda en la entrada de la casa..."</p>
+    </div>
+
+</div>
+
+<div class="navbar">
+    <div>🏠<br>Inicio</div>
+    <div>🌿<br>Plantas</div>
+    <div>📖<br>Saberes</div>
+    <div>👵<br>Historias</div>
+</div>
+```
+
+</div>
+
+</body>
+</html>
