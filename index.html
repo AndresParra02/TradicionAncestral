@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raíces Vivas App</title>
+<title>Raíces Vivas</title>
 
 <style>
 body {
@@ -13,6 +13,11 @@ body {
     background: #e9f5ec;
     display: flex;
     justify-content: center;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Simulación de celular */
@@ -51,7 +56,7 @@ body {
 }
 
 .card h3 {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 /* Navbar inferior */
@@ -60,11 +65,12 @@ body {
     justify-content: space-around;
     background: #344e41;
     padding: 10px;
-    color: white;
 }
 
-.navbar div {
+.navbar a {
     text-align: center;
+    color: white;
+    text-decoration: none;
     font-size: 12px;
 }
 </style>
@@ -76,40 +82,51 @@ body {
 <div class="app">
 
 ```
+<!-- Header -->
 <div class="header">
     <h2>🌿 Raíces Vivas</h2>
     <p>Sabiduría ancestral</p>
 </div>
 
+<!-- Contenido -->
 <div class="content">
 
-    <div class="card">
-        <h3>🌿 Manzanilla</h3>
-        <p>Usada tradicionalmente para momentos de calma y bienestar.</p>
+    <div id="inicio" class="card">
+        <h3>Bienvenido</h3>
+        <p>
+            Este espacio busca preservar el conocimiento ancestral sobre plantas medicinales,
+            transmitido por generaciones en comunidades rurales.
+        </p>
     </div>
 
-    <div class="card">
-        <h3>🌿 Ruda</h3>
-        <p>Parte de rituales y prácticas culturales en distintas regiones.</p>
+    <div id="plantas" class="card">
+        <h3>🌿 Plantas medicinales</h3>
+        <p><strong>Manzanilla:</strong> usada tradicionalmente para momentos de calma.</p>
+        <p><strong>Ruda:</strong> importante en prácticas culturales y tradicionales.</p>
+        <p><strong>Sábila:</strong> presente en hogares por sus usos naturales.</p>
     </div>
 
-    <div class="card">
-        <h3>🌿 Sábila</h3>
-        <p>Planta presente en muchos hogares por sus usos tradicionales.</p>
+    <div id="saberes" class="card">
+        <h3>📖 Saberes tradicionales</h3>
+        <p>Infusiones, baños de plantas y prácticas transmitidas por generaciones.</p>
     </div>
 
-    <div class="card">
-        <h3>Historia</h3>
-        <p>"Mi abuela siempre tenía una planta de ruda en la entrada de la casa..."</p>
+    <div id="historias" class="card">
+        <h3>👵 Historias</h3>
+        <p>
+            "Mi abuela siempre tenía plantas en casa. No solo eran medicina,
+            eran parte de nuestra vida y cultura."
+        </p>
     </div>
 
 </div>
 
+<!-- Navbar -->
 <div class="navbar">
-    <div>🏠<br>Inicio</div>
-    <div>🌿<br>Plantas</div>
-    <div>📖<br>Saberes</div>
-    <div>👵<br>Historias</div>
+    <a href="#inicio">🏠<br>Inicio</a>
+    <a href="#plantas">🌿<br>Plantas</a>
+    <a href="#saberes">📖<br>Saberes</a>
+    <a href="#historias">👵<br>Historias</a>
 </div>
 ```
 
