@@ -15,12 +15,11 @@ body {
     justify-content: center;
 }
 
-/* Scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Simulación de celular */
+/* App container */
 .app {
     width: 360px;
     height: 100vh;
@@ -40,14 +39,14 @@ html {
     text-align: center;
 }
 
-/* Contenido */
+/* Content */
 .content {
     flex: 1;
     overflow-y: auto;
     padding: 15px;
 }
 
-/* Tarjetas */
+/* Cards */
 .card {
     background: #f4f7f3;
     border-radius: 15px;
@@ -55,11 +54,7 @@ html {
     margin-bottom: 15px;
 }
 
-.card h3 {
-    margin: 0 0 10px 0;
-}
-
-/* Navbar inferior */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -73,6 +68,32 @@ html {
     text-decoration: none;
     font-size: 12px;
 }
+
+/* Filtros */
+.filtros {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+.filtros button {
+    background: #3a5a40;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Plantas */
+.planta {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
 </style>
 
 </head>
@@ -82,46 +103,96 @@ html {
 <div class="app">
 
 ```
-<!-- Header -->
+<!-- HEADER -->
 <div class="header">
     <h2>🌿 Raíces Vivas</h2>
     <p>Sabiduría ancestral</p>
 </div>
 
-<!-- Contenido -->
+<!-- CONTENIDO -->
 <div class="content">
 
     <div id="inicio" class="card">
         <h3>Bienvenido</h3>
         <p>
-            Este espacio busca preservar el conocimiento ancestral sobre plantas medicinales,
-            transmitido por generaciones en comunidades rurales.
+            Este espacio busca preservar el conocimiento ancestral sobre plantas medicinales 
+            y prácticas tradicionales transmitidas por generaciones.
         </p>
     </div>
 
+    <!-- PLANTAS -->
     <div id="plantas" class="card">
+
         <h3>🌿 Plantas medicinales</h3>
-        <p><strong>Manzanilla:</strong> usada tradicionalmente para momentos de calma.</p>
-        <p><strong>Ruda:</strong> importante en prácticas culturales y tradicionales.</p>
-        <p><strong>Sábila:</strong> presente en hogares por sus usos naturales.</p>
+
+        <div class="filtros">
+            <button onclick="filtrar('todas')">Todas</button>
+            <button onclick="filtrar('calma')">Calma</button>
+            <button onclick="filtrar('digestivo')">Digestivo</button>
+            <button onclick="filtrar('defensas')">Defensas</button>
+        </div>
+
+        <div id="lista-plantas">
+
+            <div class="planta calma digestivo">
+                <h4>🌼 Manzanilla</h4>
+                <p>Usada para molestias digestivas, relajación y bienestar general.</p>
+            </div>
+
+            <div class="planta defensas">
+                <h4>🧄 Ajo</h4>
+                <p>Fortalece el sistema inmune y tiene propiedades antibacterianas.</p>
+            </div>
+
+            <div class="planta piel defensas">
+                <h4>🌿 Aloe Vera</h4>
+                <p>Favorece la regeneración de la piel y fortalece el sistema inmune.</p>
+            </div>
+
+            <div class="planta respiratorio">
+                <h4>🌱 Eucalipto</h4>
+                <p>Usado en afecciones respiratorias como gripe y bronquitis.</p>
+            </div>
+
+            <div class="planta calma">
+                <h4>💜 Lavanda</h4>
+                <p>Relajante natural para estrés, ansiedad e insomnio.</p>
+            </div>
+
+            <div class="planta calma digestivo">
+                <h4>🍃 Tila</h4>
+                <p>Reduce ansiedad, mejora el sueño y tiene efecto antiespasmódico.</p>
+            </div>
+
+            <div class="planta digestivo">
+                <h4>🌱 Jengibre</h4>
+                <p>Ayuda con digestión, náuseas y es antiinflamatorio.</p>
+            </div>
+
+        </div>
     </div>
 
+    <!-- SABERES -->
     <div id="saberes" class="card">
         <h3>📖 Saberes tradicionales</h3>
-        <p>Infusiones, baños de plantas y prácticas transmitidas por generaciones.</p>
+        <p>
+            Infusiones, baños de plantas y prácticas culturales que combinan conocimiento 
+            natural y tradición.
+        </p>
     </div>
 
+    <!-- HISTORIAS -->
     <div id="historias" class="card">
         <h3>👵 Historias</h3>
         <p>
-            "Mi abuela siempre tenía plantas en casa. No solo eran medicina,
-            eran parte de nuestra vida y cultura."
+            "Mi abuela siempre tenía plantas en casa. No solo eran medicina, 
+            eran parte de nuestra identidad."
         </p>
     </div>
 
 </div>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <div class="navbar">
     <a href="#inicio">🏠<br>Inicio</a>
     <a href="#plantas">🌿<br>Plantas</a>
@@ -131,6 +202,24 @@ html {
 ```
 
 </div>
+
+<script>
+function filtrar(categoria) {
+    let plantas = document.querySelectorAll('.planta');
+
+    plantas.forEach(p => {
+        if (categoria === 'todas') {
+            p.style.display = 'block';
+        } else {
+            if (p.classList.contains(categoria)) {
+                p.style.display = 'block';
+            } else {
+                p.style.display = 'none';
+            }
+        }
+    });
+}
+</script>
 
 </body>
 </html>
