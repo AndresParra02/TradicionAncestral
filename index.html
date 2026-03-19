@@ -10,66 +10,68 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: #e9f5ec;
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
     display: flex;
     justify-content: center;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* App container */
+/* APP */
 .app {
     width: 360px;
     height: 100vh;
-    background: white;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Header */
+/* HEADER */
 .header {
-    background: #3a5a40;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-/* Content */
-.content {
+/* PANTALLAS */
+.pantalla {
+    display: none;
     flex: 1;
     overflow-y: auto;
     padding: 15px;
 }
 
-/* Cards */
+.activa {
+    display: block;
+}
+
+/* TARJETAS */
 .card {
-    background: #f4f7f3;
+    background: #f9f9f9;
     border-radius: 15px;
     padding: 15px;
     margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-around;
-    background: #344e41;
+    background: linear-gradient(135deg, #11998e, #38ef7d);
     padding: 10px;
 }
 
-.navbar a {
-    text-align: center;
+.navbar button {
+    background: none;
+    border: none;
     color: white;
-    text-decoration: none;
     font-size: 12px;
 }
 
-/* Filtros */
+/* FILTROS */
 .filtros {
     display: flex;
     gap: 5px;
@@ -78,21 +80,24 @@ html {
 }
 
 .filtros button {
-    background: #3a5a40;
+    background: #ff7e5f;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 10px;
-    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 12px;
     font-size: 12px;
 }
 
-/* Plantas */
+/* PLANTAS */
 .planta {
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    padding: 12px;
+    border-radius: 12px;
     margin-bottom: 10px;
+}
+
+.planta h4 {
+    margin: 0;
 }
 </style>
 
@@ -103,26 +108,25 @@ html {
 <div class="app">
 
 ```
-<!-- HEADER -->
 <div class="header">
     <h2>🌿 Raíces Vivas</h2>
-    <p>Sabiduría ancestral</p>
+    <p>Medicina ancestral</p>
 </div>
 
-<!-- CONTENIDO -->
-<div class="content">
-
-    <div id="inicio" class="card">
+<!-- INICIO -->
+<div id="inicio" class="pantalla activa">
+    <div class="card">
         <h3>Bienvenido</h3>
         <p>
-            Este espacio busca preservar el conocimiento ancestral sobre plantas medicinales 
-            y prácticas tradicionales transmitidas por generaciones.
+            Este proyecto busca preservar el conocimiento ancestral sobre plantas medicinales,
+            conectando tradición, cultura y bienestar natural.
         </p>
     </div>
+</div>
 
-    <!-- PLANTAS -->
-    <div id="plantas" class="card">
-
+<!-- PLANTAS -->
+<div id="plantas" class="pantalla">
+    <div class="card">
         <h3>🌿 Plantas medicinales</h3>
 
         <div class="filtros">
@@ -132,78 +136,106 @@ html {
             <button onclick="filtrar('defensas')">Defensas</button>
         </div>
 
-        <div id="lista-plantas">
-
-            <div class="planta calma digestivo">
-                <h4>🌼 Manzanilla</h4>
-                <p>Usada para molestias digestivas, relajación y bienestar general.</p>
-            </div>
-
-            <div class="planta defensas">
-                <h4>🧄 Ajo</h4>
-                <p>Fortalece el sistema inmune y tiene propiedades antibacterianas.</p>
-            </div>
-
-            <div class="planta piel defensas">
-                <h4>🌿 Aloe Vera</h4>
-                <p>Favorece la regeneración de la piel y fortalece el sistema inmune.</p>
-            </div>
-
-            <div class="planta respiratorio">
-                <h4>🌱 Eucalipto</h4>
-                <p>Usado en afecciones respiratorias como gripe y bronquitis.</p>
-            </div>
-
-            <div class="planta calma">
-                <h4>💜 Lavanda</h4>
-                <p>Relajante natural para estrés, ansiedad e insomnio.</p>
-            </div>
-
-            <div class="planta calma digestivo">
-                <h4>🍃 Tila</h4>
-                <p>Reduce ansiedad, mejora el sueño y tiene efecto antiespasmódico.</p>
-            </div>
-
-            <div class="planta digestivo">
-                <h4>🌱 Jengibre</h4>
-                <p>Ayuda con digestión, náuseas y es antiinflamatorio.</p>
-            </div>
-
+        <div class="planta calma digestivo">
+            <h4>🌼 Manzanilla</h4>
+            <p>
+                Conocida por sus propiedades digestivas y relajantes.
+                Se utiliza en molestias gastrointestinales, ansiedad leve y dolores musculares.
+            </p>
         </div>
-    </div>
 
-    <!-- SABERES -->
-    <div id="saberes" class="card">
-        <h3>📖 Saberes tradicionales</h3>
+        <div class="planta defensas">
+            <h4>🧄 Ajo</h4>
+            <p>
+                Potente fortalecedor del sistema inmune.
+                Tiene propiedades antibacterianas, antioxidantes y mejora la circulación.
+            </p>
+        </div>
+
+        <div class="planta piel defensas">
+            <h4>🌿 Aloe Vera</h4>
+            <p>
+                Favorece la regeneración de la piel.
+                Ideal para quemaduras, heridas y fortalecimiento del sistema inmune.
+            </p>
+        </div>
+
+        <div class="planta respiratorio">
+            <h4>🌱 Eucalipto</h4>
+            <p>
+                Usado en enfermedades respiratorias.
+                Facilita la respiración y actúa como expectorante natural.
+            </p>
+        </div>
+
+        <div class="planta calma">
+            <h4>💜 Lavanda</h4>
+            <p>
+                Relajante natural para estrés, ansiedad e insomnio.
+                También ayuda a mejorar la circulación.
+            </p>
+        </div>
+
+        <div class="planta calma digestivo">
+            <h4>🍃 Tila</h4>
+            <p>
+                Disminuye el estrés y mejora el sueño.
+                Tiene propiedades antiespasmódicas y digestivas.
+            </p>
+        </div>
+
+        <div class="planta digestivo">
+            <h4>🌱 Jengibre</h4>
+            <p>
+                Antiinflamatorio natural.
+                Ayuda con digestión, náuseas y dolores menstruales.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- SABERES -->
+<div id="saberes" class="pantalla">
+    <div class="card">
+        <h3>📖 Saberes</h3>
         <p>
-            Infusiones, baños de plantas y prácticas culturales que combinan conocimiento 
-            natural y tradición.
+            El uso de plantas medicinales ha sido transmitido por generaciones como parte
+            de la identidad cultural de muchas comunidades.
         </p>
     </div>
+</div>
 
-    <!-- HISTORIAS -->
-    <div id="historias" class="card">
+<!-- HISTORIAS -->
+<div id="historias" class="pantalla">
+    <div class="card">
         <h3>👵 Historias</h3>
         <p>
-            "Mi abuela siempre tenía plantas en casa. No solo eran medicina, 
-            eran parte de nuestra identidad."
+            "Mi abuela decía que cada planta tenía un propósito, no solo para curar el cuerpo,
+            sino también para equilibrar la vida."
         </p>
     </div>
-
 </div>
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <a href="#inicio">🏠<br>Inicio</a>
-    <a href="#plantas">🌿<br>Plantas</a>
-    <a href="#saberes">📖<br>Saberes</a>
-    <a href="#historias">👵<br>Historias</a>
+    <button onclick="cambiar('inicio')">🏠<br>Inicio</button>
+    <button onclick="cambiar('plantas')">🌿<br>Plantas</button>
+    <button onclick="cambiar('saberes')">📖<br>Saberes</button>
+    <button onclick="cambiar('historias')">👵<br>Historias</button>
 </div>
 ```
 
 </div>
 
 <script>
+function cambiar(pantalla) {
+    document.querySelectorAll('.pantalla').forEach(p => {
+        p.classList.remove('activa');
+    });
+    document.getElementById(pantalla).classList.add('activa');
+}
+
 function filtrar(categoria) {
     let plantas = document.querySelectorAll('.planta');
 
